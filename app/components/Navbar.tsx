@@ -40,8 +40,8 @@ export default function Navbar() {
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <div style={{
             position: "relative",
-            width: scrolled ? 120 : 150,
-            height: scrolled ? 60 : 75,
+            width: scrolled ? 56 : 72,
+            height: scrolled ? 56 : 72,
             transition: "width 0.3s, height 0.3s",
           }}>
             <Image
