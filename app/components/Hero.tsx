@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+const stats = [
+  { num: "42+", label: "Anos de história" },
+  { num: "4",   label: "Projetos ativos" },
+  { num: "50+", label: "Idosos atendidos" },
+];
+
 export default function Hero() {
   return (
     <section
@@ -26,7 +32,6 @@ export default function Hero() {
         gap: 80,
         alignItems: "center",
       }}>
-        {/* Texto */}
         <div className="anim-fade-up">
           <span style={{
             display: "inline-block", background: "rgba(255,255,255,0.15)",
@@ -53,27 +58,21 @@ export default function Hero() {
             <a href="#doacao" className="btn-red">Faça uma Doação</a>
           </div>
 
-          {/* Stats */}
           <div className="hero-stats" style={{ display: "flex", gap: 0, marginTop: 48, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,0.15)" }}>
-            {[
-              { num: "42+", label: "Anos de história" },
-              { num: "4",   label: "Projetos ativos" },
-              { num: "50+", label: "Idosos atendidos" },
-            ].map((s, i) => (
-              <div key={s.label} style={{
+            {stats.map((stat, i) => (
+              <div key={stat.label} style={{
                 flex: 1,
                 paddingRight: i < 2 ? 20 : 0,
                 paddingLeft: i > 0 ? 20 : 0,
                 borderRight: i < 2 ? "1px solid rgba(255,255,255,0.15)" : "none",
               }}>
-                <div style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 900, color: "#7fdbd8", fontFamily: "Montserrat, sans-serif", lineHeight: 1 }}>{s.num}</div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 6, fontWeight: 600 }}>{s.label}</div>
+                <div style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 900, color: "#7fdbd8", fontFamily: "Montserrat, sans-serif", lineHeight: 1 }}>{stat.num}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 6, fontWeight: 600 }}>{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Imagem — escondida no mobile via CSS */}
         <div className="anim-fade-in delay-300" style={{ display: "flex", justifyContent: "center", alignItems: "center", position: "relative" }}>
           <div aria-hidden="true" style={{ position: "absolute", width: 360, height: 360, borderRadius: "50%", background: "rgba(255,255,255,0.06)", border: "2px solid rgba(255,255,255,0.12)" }} />
           <div style={{ position: "relative", width: 310, height: 310, borderRadius: "50%", overflow: "hidden", border: "5px solid rgba(255,255,255,0.22)", boxShadow: "0 32px 80px rgba(0,0,0,0.3)" }}>

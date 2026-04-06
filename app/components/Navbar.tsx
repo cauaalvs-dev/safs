@@ -1,23 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-
-const links = [
-  { href: "#inicio",   label: "Início" },
-  { href: "#sobre",    label: "Sobre" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#galeria",  label: "Galeria" },
-  { href: "#contato",  label: "Contato" },
-];
+import { NAV_LINKS } from "../lib/constants";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled]  = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const textColor = scrolled ? "#1a2e35" : "white";
@@ -35,8 +28,6 @@ export default function Navbar() {
         display: "flex", alignItems: "center", justifyContent: "space-between",
         transition: "padding 0.3s",
       }}>
-
-        {/* Logo novo */}
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <div style={{
             position: "relative",
@@ -54,12 +45,11 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop links */}
         <ul style={{ gap: 32, listStyle: "none", alignItems: "center", margin: 0, padding: 0 }}
           className="hidden lg:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="nav-a" style={{ color: textColor }}>{l.label}</a>
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="nav-a" style={{ color: textColor }}>{link.label}</a>
             </li>
           ))}
           <li>
@@ -74,11 +64,10 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Hamburger */}
         <button
-          onClick={() => setOpen((o) => !o)}
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={open}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
           style={{ background: "none", border: "none", cursor: "pointer", padding: 8, flexDirection: "column", gap: 5 }}
           className="flex lg:hidden"
         >
@@ -88,17 +77,16 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
+      {menuOpen && (
         <div style={{ background: "white", borderTop: "1px solid #f0f0f0", padding: "8px 24px 24px" }} role="menu">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} role="menuitem"
-              onClick={() => setOpen(false)}
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} role="menuitem"
+              onClick={() => setMenuOpen(false)}
               style={{ display: "block", padding: "14px 0", fontWeight: 700, color: "#1a2e35", textDecoration: "none", borderBottom: "1px solid #f5f5f5", fontSize: 15 }}>
-              {l.label}
+              {link.label}
             </a>
           ))}
-          <a href="#doacao" role="menuitem" onClick={() => setOpen(false)}
+          <a href="#doacao" role="menuitem" onClick={() => setMenuOpen(false)}
             style={{ display: "block", marginTop: 16, textAlign: "center", background: "#e02020", color: "white", fontWeight: 800, padding: "14px", borderRadius: 999, textDecoration: "none", fontSize: 15 }}>
             Faça uma Doação
           </a>

@@ -6,12 +6,14 @@ import Galeria from "./components/Galeria";
 import Doacao from "./components/Doacao";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
+import SkipLink from "./components/SkipLink";
 
 export default function Home() {
   return (
     <>
+      <SkipLink />
       <Navbar />
-      <main>
+      <main id="conteudo-principal">
         <Hero />
         <Sobre />
         <Projetos />

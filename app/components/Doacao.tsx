@@ -1,3 +1,11 @@
+const dadosBancarios = [
+  { label: "Banco",       value: "Caixa Econômica Federal" },
+  { label: "Agência",     value: "0554" },
+  { label: "Operação",    value: "1388" },
+  { label: "Conta",       value: "720019831-6" },
+  { label: "Instituição", value: "Sociedade de Apoio à Família Sobralense" },
+];
+
 export default function Doacao() {
   return (
     <section id="doacao" style={{ padding: "100px 0", background: "linear-gradient(135deg, #1a2e35 0%, #2a8a86 100%)" }}>
@@ -14,26 +22,18 @@ export default function Doacao() {
         </p>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }} className="doacao-grid">
-          {/* PIX */}
           <div style={{ background: "white", borderRadius: 24, padding: 36 }}>
             <h3 style={{ fontWeight: 900, color: "#1a2e35", fontSize: "1.2rem", marginBottom: 24, marginTop: 0 }}>PIX / Transferência</h3>
             <div style={{ background: "#e8f7f7", borderRadius: 16, padding: 24, textAlign: "left", display: "flex", flexDirection: "column", gap: 16 }}>
-              {[
-                { label: "Banco",      value: "Caixa Econômica Federal" },
-                { label: "Agência",    value: "0554" },
-                { label: "Operação",   value: "1388" },
-                { label: "Conta",      value: "720019831-6" },
-                { label: "Instituição",value: "Sociedade de Apoio à Família Sobralense" },
-              ].map((item) => (
-                <div key={item.label} style={{ borderBottom: "1px solid rgba(58,174,169,0.15)", paddingBottom: 12 }}>
-                  <div style={{ fontSize: 11, fontWeight: 800, color: "#3aaea9", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>{item.label}</div>
-                  <div style={{ fontWeight: 700, color: "#1a2e35", fontSize: 15 }}>{item.value}</div>
+              {dadosBancarios.map((dado) => (
+                <div key={dado.label} style={{ borderBottom: "1px solid rgba(58,174,169,0.15)", paddingBottom: 12 }}>
+                  <div style={{ fontSize: 11, fontWeight: 800, color: "#3aaea9", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>{dado.label}</div>
+                  <div style={{ fontWeight: 700, color: "#1a2e35", fontSize: 15 }}>{dado.value}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Contato */}
           <div style={{ background: "white", borderRadius: 24, padding: 36, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 20 }}>
             <h3 style={{ fontWeight: 900, color: "#1a2e35", fontSize: "1.2rem", margin: 0 }}>Entre em Contato</h3>
             <p style={{ color: "#555f63", fontSize: 14, lineHeight: 1.7, textAlign: "center", margin: 0 }}>
