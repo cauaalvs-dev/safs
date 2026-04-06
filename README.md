@@ -1,3 +1,10 @@
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4+-38B2AC?style=for-the-badge&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
+![License](https://img.shields.io/github/license/cauaalvs-dev/safs?style=for-the-badge&color=orange)
+![Vercel Deploy](https://img.shields.io/badge/Vercel-Deployed-success?style=for-the-badge&logo=vercel)
+
+
 # SAFS – Sociedade de Apoio à Família Sobralense
 
 Site institucional da SAFS, organização sem fins lucrativos que atua desde 1983 no bairro Dom José, Sobral-CE.
