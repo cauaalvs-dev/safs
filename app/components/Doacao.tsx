@@ -1,55 +1,57 @@
 export default function Doacao() {
   return (
-    <section id="doacao" className="py-24"
-      style={{ background: "linear-gradient(135deg, #1a2e35 0%, #2a8a86 100%)" }}>
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <span className="inline-block bg-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6">
+    <section id="doacao" style={{ padding: "96px 0", background: "linear-gradient(135deg, #1a2e35 0%, #2a8a86 100%)" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
+        <span style={{ display: "inline-block", background: "rgba(255,255,255,0.2)", color: "white", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", padding: "6px 16px", borderRadius: 999, marginBottom: 24 }}>
           Apoie nossa causa
         </span>
-        <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-          Faça sua <span className="text-[#7fdbd8]">Doação</span>
+        <h2 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, color: "white", margin: "0 0 16px" }}>
+          Faça sua <span style={{ color: "#7fdbd8" }}>Doação</span>
         </h2>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto mb-12">
-          Sua contribuição transforma vidas no bairro Dom José. Cada doação é um passo a mais
-          na construção de um futuro melhor para crianças, adolescentes e famílias de Sobral.
+        <p style={{ color: "rgba(255,255,255,0.8)", fontSize: 18, maxWidth: 560, margin: "0 auto 56px", lineHeight: 1.7 }}>
+          Sua contribuição transforma vidas no bairro Dom José. Cada doação é um passo
+          a mais na construção de um futuro melhor.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, maxWidth: 680, margin: "0 auto" }}>
           {/* PIX */}
-          <div className="bg-white rounded-3xl p-8">
-            <div className="text-4xl mb-3">💳</div>
-            <h3 className="font-black text-[#1a2e35] text-xl mb-4">PIX</h3>
-            <div className="bg-[#e8f7f7] rounded-xl p-4 text-left space-y-2">
-              <div>
-                <span className="text-xs font-bold text-[#555f63] uppercase tracking-wide">Banco</span>
-                <p className="font-bold text-[#1a2e35]">Caixa Econômica Federal</p>
-              </div>
-              <div>
-                <span className="text-xs font-bold text-[#555f63] uppercase tracking-wide">Agência / Op / Conta</span>
-                <p className="font-bold text-[#1a2e35]">0554 / Op: 1388 / 720019831-6</p>
-              </div>
-              <div>
-                <span className="text-xs font-bold text-[#555f63] uppercase tracking-wide">Instituição</span>
-                <p className="font-bold text-[#1a2e35] text-sm">Sociedade de Apoio à Família Sobralense</p>
+          <div style={{ background: "white", borderRadius: 24, padding: 32 }}>
+            <div style={{ fontSize: 40, marginBottom: 12 }}>💳</div>
+            <h3 style={{ fontWeight: 900, color: "#1a2e35", fontSize: "1.2rem", marginTop: 0, marginBottom: 20 }}>PIX / Transferência</h3>
+            <div style={{ background: "#e8f7f7", borderRadius: 16, padding: 20, textAlign: "left", display: "flex", flexDirection: "column", gap: 14 }}>
+              {[
+                { label: "Banco", value: "Caixa Econômica Federal" },
+                { label: "Agência", value: "0554" },
+                { label: "Operação", value: "1388" },
+                { label: "Conta", value: "720019831-6" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: "#555f63", textTransform: "uppercase", letterSpacing: "0.08em" }}>{item.label}</div>
+                  <div style={{ fontWeight: 700, color: "#1a2e35", fontSize: 15, marginTop: 2 }}>{item.value}</div>
+                </div>
+              ))}
+              <div style={{ borderTop: "1px solid #c8ede9", paddingTop: 14 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#555f63", textTransform: "uppercase", letterSpacing: "0.08em" }}>Instituição</div>
+                <div style={{ fontWeight: 700, color: "#1a2e35", fontSize: 13, marginTop: 2 }}>Sociedade de Apoio à Família Sobralense</div>
               </div>
             </div>
           </div>
 
-          {/* QR Code */}
-          <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center">
-            <div className="text-4xl mb-3">📱</div>
-            <h3 className="font-black text-[#1a2e35] text-xl mb-2">QR Code PIX</h3>
-            <p className="text-[#555f63] text-sm mb-4">Entre em contato para receber o QR Code de doação:</p>
-            <a
-              href="mailto:safs3388@gmail.com"
-              className="bg-[#3aaea9] text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-[#2a8a86] transition-colors"
-            >
+          {/* Contato para QR */}
+          <div style={{ background: "white", borderRadius: 24, padding: 32, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ fontSize: 40, marginBottom: 12 }}>📱</div>
+            <h3 style={{ fontWeight: 900, color: "#1a2e35", fontSize: "1.2rem", marginTop: 0, marginBottom: 12 }}>QR Code PIX</h3>
+            <p style={{ color: "#555f63", fontSize: 14, marginBottom: 24, lineHeight: 1.6, textAlign: "center" }}>
+              Entre em contato para receber o QR Code de doação diretamente:
+            </p>
+            <a href="mailto:safs3388@gmail.com"
+              style={{ background: "#3aaea9", color: "white", fontWeight: 700, padding: "12px 24px", borderRadius: 999, textDecoration: "none", fontSize: 14 }}>
               safs3388@gmail.com
             </a>
           </div>
         </div>
 
-        <p className="text-white/60 text-sm mt-8">
+        <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 13, marginTop: 40 }}>
           Todas as doações são revertidas integralmente para os projetos sociais da SAFS.
         </p>
       </div>
