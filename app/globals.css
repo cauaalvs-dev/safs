@@ -2,56 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #1a2e35;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* ─── Animations ─────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
 
-.anim-fade-up  { animation: fadeUp 0.7s ease both; }
-.anim-fade-in  { animation: fadeIn 0.6s ease both; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-500 { animation-delay: 0.5s; }
+.anim-fade-up  { animation: fadeUp  0.75s cubic-bezier(.22,.68,0,1.2) both; }
+.anim-fade-in  { animation: fadeIn  0.65s ease both; }
+.delay-300     { animation-delay: 0.3s; }
+.delay-500     { animation-delay: 0.5s; }
 
-.foto-card { transition: transform 0.2s, box-shadow 0.2s; }
+/* ─── Buttons ────────────────────────────────────── */
+.btn-white {
+  background: white; color: #2a8a86; font-weight: 800;
+  padding: 14px 30px; border-radius: 999px; text-decoration: none;
+  font-size: 15px; transition: background 0.2s, transform 0.15s;
+  display: inline-block; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+}
+.btn-white:hover { background: #e8f7f7; transform: translateY(-1px); }
+
+.btn-red {
+  background: #e02020; color: white; font-weight: 800;
+  padding: 14px 30px; border-radius: 999px; text-decoration: none;
+  font-size: 15px; transition: background 0.2s, transform 0.15s;
+  display: inline-block; letter-spacing: 0.01em;
+  box-shadow: 0 4px 20px rgba(224,32,32,0.4);
+}
+.btn-red:hover { background: #c01010; transform: translateY(-1px); }
+
+/* ─── Cards ──────────────────────────────────────── */
+.card-projeto {
+  background: white; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.card-projeto:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.13);
+  transform: translateY(-4px);
+}
+
+/* ─── Gallery ────────────────────────────────────── */
+.foto-card { transition: transform 0.22s, box-shadow 0.22s; cursor: default; }
 .foto-card:hover { transform: scale(1.03); box-shadow: 0 16px 40px rgba(0,0,0,0.18) !important; }
 
-.footer-link { color: rgba(255,255,255,0.5); font-size: 14px; text-decoration: none; transition: color 0.2s; display: block; }
-.footer-link:hover { color: #7fdbd8; }
-
-.nav-a { font-weight: 700; font-size: 14px; text-decoration: none; transition: color 0.2s; letter-spacing: 0.01em; }
+/* ─── Nav ────────────────────────────────────────── */
+.nav-a {
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  transition: color 0.2s; letter-spacing: 0.02em;
+}
 .nav-a:hover { color: #3aaea9 !important; }
 
-.btn-white { background: white; color: #2a8a86; font-weight: 700; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-size: 15px; transition: background 0.2s; display: inline-block; }
-.btn-white:hover { background: #e8f7f7; }
+/* ─── Footer links ───────────────────────────────── */
+.footer-link {
+  color: rgba(255,255,255,0.5); font-size: 14px;
+  text-decoration: none; transition: color 0.2s; display: block;
+}
+.footer-link:hover { color: #7fdbd8; }
 
-.btn-red { background: #e02020; color: white; font-weight: 700; padding: 14px 28px; border-radius: 999px; text-decoration: none; font-size: 15px; transition: background 0.2s; display: inline-block; }
-.btn-red:hover { background: #c01010; }
+/* ─── Focus visible (accessibility + anti-clickjacking) ── */
+:focus-visible {
+  outline: 3px solid #3aaea9;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
-.card-projeto { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); transition: box-shadow 0.2s, transform 0.2s; }
-.card-projeto:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); transform: translateY(-2px); }
+/* ─── Prevent content selection on decorative elements ── */
+[aria-hidden="true"] { user-select: none; pointer-events: none; }

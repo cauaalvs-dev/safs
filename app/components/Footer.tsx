@@ -38,7 +38,7 @@ export default function Footer() {
               <span className="footer-link" style={{ cursor: "default" }}>Bairro Dom José, Sobral – CE</span>
               <a href="tel:+558836117380" className="footer-link">(88) 3611-7380</a>
               <a href="mailto:safs3388@gmail.com" className="footer-link">safs3388@gmail.com</a>
-              <a href="https://instagram.com/safs.dom.jose" target="_blank" rel="noopener noreferrer" className="footer-link">@safs.dom.jose</a>
+              <a href="https://www.instagram.com/safs.dom.jose/" target="_blank" rel="noopener noreferrer" className="footer-link">@safs.dom.jose</a>
             </div>
           </div>
         </div>
