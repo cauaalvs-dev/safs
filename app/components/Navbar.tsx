@@ -41,8 +41,8 @@ export default function Navbar() {
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <div style={{
             position: "relative",
-            width: scrolled ? 64 : 80,
-            height: scrolled ? 74 : 92,
+            width: scrolled ? 52 : 64,
+            height: scrolled ? 60 : 74,
             transition: "width 0.3s, height 0.3s",
             filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
           }}>
