@@ -12,11 +12,11 @@ export default function Footer() {
   return (
     <footer style={{ background: "#1a2e35", color: "white", padding: "64px 0 32px" }}>
       <style>{`.footer-link { color: rgba(255,255,255,0.5); font-size:14px; text-decoration:none; transition:color 0.2s; display:block; } .footer-link:hover { color:#7fdbd8; }`}</style>
-      <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 56, marginBottom: 56 }} className="footer-grid">
           <div>
             <div style={{ position: "relative", width: 58, height: 68, marginBottom: 20 }}>
-              <Image src="/images/logo-viver.png" alt="SAFS Viver+" fill style={{ objectFit: "contain" }} />
+              <Image src="/images/logo-safs.png" alt="SAFS" fill style={{ objectFit: "contain" }} />
             </div>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, lineHeight: 1.8, maxWidth: 300 }}>
               Sociedade de Apoio à Família Sobralense. Transformando vidas no bairro Dom José, Sobral-CE, desde 1983.

@@ -59,7 +59,7 @@ export default function Contato() {
 
   return (
     <section id="contato" aria-label="Contato" style={{ padding: "100px 0", background: "#f8fafc" }}>
-      <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
         <div style={{ textAlign: "center", marginBottom: 72 }}>
           <span style={{ color: "#3aaea9", fontWeight: 800, fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase" }}>Fale conosco</span>
           <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", fontWeight: 900, color: "#1a2e35", marginTop: 10 }}>Contato</h2>

@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-// Static data — no user input, no XSS surface here
 const links = [
   { href: "#inicio",   label: "Início" },
   { href: "#sobre",    label: "Sobre" },
@@ -17,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn, { passive: true }); // passive for perf
+    window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
@@ -32,26 +31,31 @@ export default function Navbar() {
     }}>
       <div style={{
         maxWidth: 1152, margin: "0 auto",
-        padding: scrolled ? "10px 40px" : "18px 40px",
+        padding: scrolled ? "8px 32px" : "14px 32px",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         transition: "padding 0.3s",
       }}>
 
-        {/* Logo — maior e com animação suave */}
+        {/* Logo novo */}
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}>
           <div style={{
             position: "relative",
-            width: scrolled ? 52 : 64,
-            height: scrolled ? 60 : 74,
+            width: scrolled ? 56 : 72,
+            height: scrolled ? 56 : 72,
             transition: "width 0.3s, height 0.3s",
-            filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.15))",
           }}>
-            <Image src="/images/logo-viver.png" alt="SAFS Viver+" fill style={{ objectFit: "contain" }} priority />
+            <Image
+              src="/images/logo-safs-novo.png"
+              alt="SAFS – Sociedade de Apoio à Família Sobralense"
+              fill
+              style={{ objectFit: "contain", objectPosition: "center" }}
+              priority
+            />
           </div>
         </a>
 
-        {/* Desktop — lg breakpoint para não duplicar com hamburger */}
-        <ul style={{ gap: 36, listStyle: "none", alignItems: "center", margin: 0, padding: 0 }}
+        {/* Desktop links */}
+        <ul style={{ gap: 32, listStyle: "none", alignItems: "center", margin: 0, padding: 0 }}
           className="hidden lg:flex">
           {links.map((l) => (
             <li key={l.href}>
@@ -61,17 +65,16 @@ export default function Navbar() {
           <li>
             <a href="#doacao" style={{
               background: "#e02020", color: "white", fontWeight: 800,
-              padding: "11px 26px", borderRadius: 999, textDecoration: "none",
-              fontSize: 14, whiteSpace: "nowrap", letterSpacing: "0.01em",
+              padding: "10px 22px", borderRadius: 999, textDecoration: "none",
+              fontSize: 14, whiteSpace: "nowrap",
               boxShadow: "0 4px 14px rgba(224,32,32,0.35)",
-              transition: "background 0.2s, box-shadow 0.2s",
             }}>
               Faça uma Doação
             </a>
           </li>
         </ul>
 
-        {/* Hamburger — só aparece abaixo de lg */}
+        {/* Hamburger */}
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -87,8 +90,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div style={{ background: "white", borderTop: "1px solid #f0f0f0", padding: "8px 28px 24px" }}
-          role="menu">
+        <div style={{ background: "white", borderTop: "1px solid #f0f0f0", padding: "8px 24px 24px" }} role="menu">
           {links.map((l) => (
             <a key={l.href} href={l.href} role="menuitem"
               onClick={() => setOpen(false)}
@@ -97,7 +99,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="#doacao" role="menuitem" onClick={() => setOpen(false)}
-            style={{ display: "block", marginTop: 18, textAlign: "center", background: "#e02020", color: "white", fontWeight: 800, padding: "14px", borderRadius: 999, textDecoration: "none", fontSize: 15 }}>
+            style={{ display: "block", marginTop: 16, textAlign: "center", background: "#e02020", color: "white", fontWeight: 800, padding: "14px", borderRadius: 999, textDecoration: "none", fontSize: 15 }}>
             Faça uma Doação
           </a>
         </div>

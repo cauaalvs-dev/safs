@@ -5,7 +5,7 @@ const valores = ["Respeito", "Transparência", "Ética", "Responsabilidade"];
 export default function Sobre() {
   return (
     <section id="sobre" aria-label="Sobre a SAFS" style={{ padding: "100px 0", background: "white" }}>
-      <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
+      <div className="section-inner" style={{ maxWidth: 1152, margin: "0 auto", padding: "0 40px" }}>
 
         <div style={{ textAlign: "center", marginBottom: 72 }}>
           <span style={{ color: "#3aaea9", fontWeight: 800, fontSize: 12, letterSpacing: "0.2em", textTransform: "uppercase" }}>Quem somos</span>
