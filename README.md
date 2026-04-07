@@ -1,49 +1,47 @@
-![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4+-38B2AC?style=for-the-badge&logo=tailwind-css)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
-![License](https://img.shields.io/github/license/cauaalvs-dev/safs?style=for-the-badge&color=orange)
-![Vercel Deploy](https://img.shields.io/badge/Vercel-Deployed-success?style=for-the-badge&logo=vercel)
-
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4+-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?logo=typescript)](https://www.typescriptlang.org)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Vercel](https://img.shields.io/badge/Vercel-deployed-black?logo=vercel)](https://vercel.com)
+[![Deployed](https://img.shields.io/badge/Site-DEPLOYED-brightgreen)](https://sociedadesafs.org)
 
 # SAFS – Sociedade de Apoio à Família Sobralense
 
-Site institucional da SAFS, organização sem fins lucrativos que atua desde 1983 no bairro Dom José, Sobral-CE.
+Institutional website for SAFS, a non-profit organization active since 1983 in the Dom José neighborhood, Sobral-CE.
 
-## Tecnologias
+## Tech Stack
 
-- [Next.js 15](https://nextjs.org/) com App Router
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Next.js 15](https://nextjs.org) with App Router
+- [Tailwind CSS](https://tailwindcss.com)
 - TypeScript
 
-## Rodando localmente
-
+## Running Locally
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000).
+Access [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-O projeto está configurado para deploy automático na [Vercel](https://vercel.com). Qualquer push na branch `main` dispara um novo deploy.
+The project is configured for automatic deployment on [Vercel](https://vercel.com). Any push to the `main` branch triggers a new deploy.
 
-## Estrutura
+## Structure
 
-```
 app/
-  components/    # Componentes de cada seção
-  globals.css    # Estilos globais
-  layout.tsx     # Layout raiz
-  page.tsx       # Página principal
+components/    # Section components
+globals.css    # Global styles
+layout.tsx     # Root layout
+page.tsx       # Main page
 public/
-  images/        # Imagens e logos
-```
+images/        # Images and logos
 
-## Contato
+## Contact
 
 - GitHub: [@cauaalvs-dev](https://github.com/cauaalvs-dev)
 - LinkedIn: [cauaalvs-dev](https://www.linkedin.com/in/cauaalvs-dev)
-- Email: safs3388@gmail.com
-- Instagram: [@safs.dom.jose](https://instagram.com/safs.dom.jose)
-- Telefone: (88) 3611-7380
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
