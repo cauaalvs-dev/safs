@@ -29,13 +29,15 @@ The project is configured for automatic deployment on [Vercel](https://vercel.co
 
 ## Structure
 
+```
 app/
-components/    # Section components
-globals.css    # Global styles
-layout.tsx     # Root layout
-page.tsx       # Main page
+  components/    # Section components
+  globals.css    # Global styles
+  layout.tsx     # Root layout
+  page.tsx       # Main page
 public/
-images/        # Images and logos
+  images/        # Images and logos
+```
 
 ## Lighthouse
 
