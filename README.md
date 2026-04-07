@@ -37,6 +37,20 @@ page.tsx       # Main page
 public/
 images/        # Images and logos
 
+## Lighthouse
+
+![Performance](https://img.shields.io/badge/Performance-94-success?style=flat-square&logo=lighthouse&logoColor=white)
+![Accessibility](https://img.shields.io/badge/Accessibility-96-success?style=flat-square&logo=lighthouse&logoColor=white)
+![Best Practices](https://img.shields.io/badge/Best%20Practices-100-success?style=flat-square&logo=lighthouse&logoColor=white)
+![SEO](https://img.shields.io/badge/SEO-100-success?style=flat-square&logo=lighthouse&logoColor=white)
+
+| Metric | Score |
+|---|---|
+| Performance | 94 ✅ |
+| Accessibility | 96 ✅ |
+| Best Practices | 100 ✅ |
+| SEO | 100 ✅ |
+
 ## Contact
 
 - GitHub: [@cauaalvs-dev](https://github.com/cauaalvs-dev)
