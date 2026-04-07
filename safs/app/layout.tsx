@@ -42,10 +42,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Carregar fonte de forma não-bloqueante: media="print" → onload → all */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=optional"
+          media="print"
+          // @ts-expect-error onload trick for non-blocking font load
+          onLoad="this.media='all'"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
+          />
+        </noscript>
         <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
       <body>{children}</body>
