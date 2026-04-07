@@ -42,6 +42,8 @@ public/
 
 ## Contato
 
+- GitHub: [@cauaalvs-dev](https://github.com/cauaalvs-dev)
+- LinkedIn: [cauaalvs-dev](https://www.linkedin.com/in/cauaalvs-dev)
 - Email: safs3388@gmail.com
 - Instagram: [@safs.dom.jose](https://instagram.com/safs.dom.jose)
 - Telefone: (88) 3611-7380
