@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const fotos = [
-  { src: "/images/criancas-parque.png",      alt: "Crianças no parque com uniforme SAFS" },
-  { src: "/images/criancas-piscina.png",     alt: "Crianças na piscina" },
-  { src: "/images/criancas-quadra.png",      alt: "Jovens na quadra da SAFS" },
-  { src: "/images/para-quem-atuamos2.png",   alt: "Atividades com a comunidade" },
-  { src: "/images/atividade-safs.png",       alt: "Atividade da SAFS" },
-  { src: "/images/comunidade-dom-jose.png",  alt: "Comunidade Dom José" },
+  { src: "/images/criancas-parque.jpg",      alt: "Crianças no parque com uniforme SAFS" },
+  { src: "/images/criancas-piscina.jpg",     alt: "Crianças na piscina" },
+  { src: "/images/criancas-quadra.jpg",      alt: "Jovens na quadra da SAFS" },
+  { src: "/images/para-quem-atuamos2.jpg",   alt: "Atividades com a comunidade" },
+  { src: "/images/atividade-safs.jpg",       alt: "Atividade da SAFS" },
+  { src: "/images/comunidade-dom-jose.jpg",  alt: "Comunidade Dom José" },
 ];
 
 export default function Galeria() {
