@@ -1,12 +1,38 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://sociedadesafs.org";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "SAFS – Sociedade de Apoio à Família Sobralense",
   description:
     "Transformando vidas sobralenses desde 18 de janeiro de 1983. " +
-    "Atuamos no bairro Dom José, Sobral-CE.",
+    "Atuamos no bairro Dom José, Sobral-CE com projetos de educação, saúde e cidadania.",
+  keywords: [
+    "SAFS", "Sociedade de Apoio à Família Sobralense",
+    "ONG Sobral", "assistência social Sobral", "Dom José Sobral",
+    "projetos sociais Ceará",
+  ],
+  authors: [{ name: "SAFS" }],
   robots: { index: true, follow: true },
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: siteUrl,
+    siteName: "SAFS",
+    title: "SAFS – Sociedade de Apoio à Família Sobralense",
+    description:
+      "Transformando vidas sobralenses desde 1983. Projetos sociais no bairro Dom José, Sobral-CE.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "SAFS – Sociedade de Apoio à Família Sobralense" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SAFS – Sociedade de Apoio à Família Sobralense",
+    description: "Transformando vidas sobralenses desde 1983.",
+    images: ["/og-image.jpg"],
+  },
   other: { "format-detection": "telephone=no" },
 };
 
@@ -15,22 +41,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        {/*
-          crossOrigin="anonymous" é obrigatório para que o browser aplique
-          a política de CORS corretamente ao buscar fontes do gstatic.
-        */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/*
-          SRI (Subresource Integrity) não é aplicável a @import CSS dinâmico
-          do Google Fonts porque o conteúdo varia por User-Agent.
-          Mitigação: o CSP limita font-src estritamente a fonts.gstatic.com.
-          Para máxima segurança em produção, auto-hospedar as fontes eliminaria
-          essa dependência externa completamente.
-        */}
+        {/* Carregar fonte de forma não-bloqueante: media="print" → onload → all */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=optional"
+          media="print"
+          // @ts-expect-error onload trick for non-blocking font load
+          onLoad="this.media='all'"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito:wght@400;600;700;800&display=swap"
+          />
+        </noscript>
         <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
       <body>{children}</body>

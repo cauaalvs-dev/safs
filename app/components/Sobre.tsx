@@ -15,7 +15,7 @@ export default function Sobre() {
         <div className="sobre-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", marginBottom: 80 }}>
           <div style={{ position: "relative" }}>
             <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.1)" }}>
-              <Image src="/images/sobre.png" alt="Atividades da SAFS no bairro Dom José" width={680} height={460} style={{ width: "100%", height: "auto", display: "block" }} />
+              <Image src="/images/sobre.jpg" alt="Atividades da SAFS no bairro Dom José" width={680} height={460} style={{ width: "100%", height: "auto", display: "block" }} />
             </div>
             <div style={{
               marginTop: 20, display: "inline-flex", alignItems: "center", gap: 16,
@@ -64,7 +64,7 @@ export default function Sobre() {
         </div>
 
         <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.07)", marginBottom: 80 }}>
-          <Image src="/images/para-quem-atuamos.png" alt="Público atendido pela SAFS: crianças, adolescentes, jovens e idosos do bairro Dom José" width={1152} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
+          <Image src="/images/para-quem-atuamos.jpg" alt="Público atendido pela SAFS: crianças, adolescentes, jovens e idosos do bairro Dom José" width={1152} height={400} style={{ width: "100%", height: "auto", display: "block" }} />
         </div>
 
         <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -72,7 +72,7 @@ export default function Sobre() {
           <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", fontWeight: 900, color: "#1a2e35", marginTop: 10 }}>Áreas de Atuação</h2>
         </div>
         <div style={{ borderRadius: 24, overflow: "hidden", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
-          <Image src="/images/areas-atuacao.png" alt="Áreas de atuação da SAFS: educação, esporte, cultura e bem-estar comunitário" width={1152} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+          <Image src="/images/areas-atuacao.jpg" alt="Áreas de atuação da SAFS: educação, esporte, cultura e bem-estar comunitário" width={1152} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
         </div>
       </div>
 
